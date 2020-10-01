@@ -23,7 +23,7 @@ df_not_parsed <- df_not_parsed %>%
     filter(!is.na(skill))
     
     
-# shiny dmeo ---------------------------------------------------------------
+# df wrangle ---------------------------------------------------------------
 df <- df_not_parsed %>% 
     mutate(atk_set_call = ifelse(skill == 'Attack', lag(set_code,1), NA),
            team_rotation = ifelse(home_team_id == team_id, home_setter_position, visiting_setter_position),
