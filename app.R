@@ -19,7 +19,6 @@ dvw_parse <- lapply(dvws, dv_read, skill_evaluation_decode = "volleymetrics")
 df_not_wrangled <- do.call(rbind, lapply(dvw_parse, plays))
 
 # Wrangle dvw df ---------------------------------------------------------------
-    #Nothing against Ben Raymonds wording for some of the columns or what is missing... Just makes more sense to me to arrange things that make sense in my mind
 df <- df_not_wrangled %>% 
     mutate(skill = ifelse(point == T, 'Point', skill),
            player_name = str_to_title(player_name), 
